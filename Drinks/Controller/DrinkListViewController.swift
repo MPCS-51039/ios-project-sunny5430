@@ -13,18 +13,15 @@ class DrinkListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var drinks : [String] = []
+    var drinks : [Drink] = []
+    var drinkService: DrinkService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.drinks = ["Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal",
-        "Milk Tea", "Fruit Tea", "Specialty", "Seasonal"]
+        
+        self.drinkService = DrinkService() // __Service: get data from somewhere else
+        self.drinks = self.drinkService.getDrinks()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -44,8 +41,9 @@ extension DrinkListViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "drinkCell") as! DrinkCell
         
-        cell.drinkNameLabel.text = self.drinks[indexPath.row]
-        cell.drinkTypeLabel.text = "lots of boba"
+        let currentDrink = self.drinks[indexPath.row]
+        cell.drinkNameLabel.text = currentDrink.name
+        cell.drinkTypeLabel.text = currentDrink.content
         
         return cell
     }
