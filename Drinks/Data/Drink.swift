@@ -13,6 +13,7 @@ class Drink {
     var content: String
     var calories: Int
     var price: Float
+    var tasted: Bool = false
     
     init(name: String, content: String, cal calories: Int, price: Float) {
         self.name = name

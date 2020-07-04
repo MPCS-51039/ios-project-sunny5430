@@ -42,8 +42,12 @@ extension DrinkListViewController: UITableViewDataSource {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "drinkCell") as! DrinkCell
         
         let currentDrink = self.drinks[indexPath.row]
+        
+        cell.drink = currentDrink
+        
         cell.drinkNameLabel.text = currentDrink.name
         cell.drinkTypeLabel.text = currentDrink.content
+        cell.accessoryType = currentDrink.tasted ? .checkmark : .none
         
         return cell
     }
@@ -51,5 +55,11 @@ extension DrinkListViewController: UITableViewDataSource {
 
 extension DrinkListViewController: UITableViewDelegate {
     //MARK:Delegate
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? DrinkCell{
+            cell.drink?.tasted = true
+            cell.accessoryType = cell.drink!.tasted ? .checkmark : .none
+        }
+    }
+
 }

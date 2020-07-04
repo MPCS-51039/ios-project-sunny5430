@@ -12,6 +12,8 @@ class DrinkCell: UITableViewCell {
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var drinkTypeLabel: UILabel!
     
+    var drink: Drink?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
