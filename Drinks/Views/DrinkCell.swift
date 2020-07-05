@@ -12,7 +12,13 @@ class DrinkCell: UITableViewCell {
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var drinkTypeLabel: UILabel!
     
-    var drink: Drink?
+    var drink: Drink? {
+        didSet {
+            self.drinkNameLabel.text = drink?.name
+            self.drinkTypeLabel.text = drink?.content
+            self.accessoryType = drink!.tasted ? .checkmark : .none
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
