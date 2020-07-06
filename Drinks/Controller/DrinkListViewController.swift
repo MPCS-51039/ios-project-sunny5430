@@ -61,5 +61,28 @@ extension DrinkListViewController: UITableViewDelegate {
             cell.accessoryType = confirmedDrink.tasted ? .checkmark : .none
         }
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = self.tableView.cellForRow(at: indexPath) as! DrinkCell
+        let confirmedDrink = cell.drink!
+        
+        let favorite = confirmedDrink.isFavorite
+        let title = favorite ? NSLocalizedString("Unlike", comment: "Unlike") : NSLocalizedString("Like", comment: "Like")
+        
+        
+        let setFavorite = UIContextualAction(style: .normal, title: title, handler: {(action: UIContextualAction, view:UIView, complete:(Bool) ->Void) in
+            confirmedDrink.isFavorite = !confirmedDrink.isFavorite
+            complete(true)
+        })
+        setFavorite.backgroundColor = confirmedDrink.isFavorite ? .systemPink: .blue
+        
+        //let drinkIcon = UIImageView()
+        let displayedIcon = favorite ? UIImage(systemName: "heart.slash", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)):UIImage(systemName: "heart.fill")
+        setFavorite.image = displayedIcon
+        
+        return UISwipeActionsConfiguration(actions: [setFavorite])
+        
+    }
 
 }

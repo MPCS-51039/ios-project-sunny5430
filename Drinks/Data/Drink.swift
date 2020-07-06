@@ -14,11 +14,13 @@ class Drink {
     var calories: Int
     var price: Float
     var tasted: Bool = false
+    var isFavorite:Bool = false
     
     init(name: String, content: String, cal calories: Int, price: Float) {
         self.name = name
         self.content = content
         self.calories = calories
         self.price = price
+        
     }
 }

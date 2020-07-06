@@ -9,6 +9,8 @@
 import UIKit
 
 class DrinkCell: UITableViewCell {
+    
+    @IBOutlet weak var drinkPriceLabel: UILabel!
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var drinkTypeLabel: UILabel!
     
@@ -16,6 +18,7 @@ class DrinkCell: UITableViewCell {
         didSet {
             self.drinkNameLabel.text = drink?.name
             self.drinkTypeLabel.text = drink?.content
+            self.drinkPriceLabel.text = "$\(drink?.price ?? 0)"
             self.accessoryType = drink!.tasted ? .checkmark : .none
         }
     }
