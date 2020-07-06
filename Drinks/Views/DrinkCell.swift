@@ -9,8 +9,19 @@
 import UIKit
 
 class DrinkCell: UITableViewCell {
+    
+    @IBOutlet weak var drinkPriceLabel: UILabel!
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var drinkTypeLabel: UILabel!
+    
+    var drink: Drink? {
+        didSet {
+            self.drinkNameLabel.text = drink?.name
+            self.drinkTypeLabel.text = drink?.content
+            self.drinkPriceLabel.text = "$\(drink?.price ?? 0)"
+            self.accessoryType = drink!.tasted ? .checkmark : .none
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
