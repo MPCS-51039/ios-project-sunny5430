@@ -66,6 +66,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="drinkImageView" destination="jxy-Sj-ISP" id="saK-f0-5Gn"/>
                                             <outlet property="drinkNameLabel" destination="Q6d-rf-cK3" id="lWW-Sa-TdP"/>
                                             <outlet property="drinkPriceLabel" destination="pEs-2j-AAd" id="2WA-hS-lPr"/>
                                             <outlet property="drinkTypeLabel" destination="dBn-bm-KTf" id="jSR-qI-Pya"/>
@@ -93,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="121.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="HrB-Bh-9PY">
             <objects>
-                <viewController id="lEv-nG-D0H" sceneMemberID="viewController">
+                <viewController id="lEv-nG-D0H" customClass="DetailViewController" customModule="Drinks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RCP-fD-D14">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

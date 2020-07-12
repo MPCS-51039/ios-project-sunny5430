@@ -13,6 +13,8 @@ class DrinkCell: UITableViewCell {
     @IBOutlet weak var drinkPriceLabel: UILabel!
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var drinkTypeLabel: UILabel!
+    @IBOutlet weak var drinkImageView: UIImageView!
+    
     
     var drink: Drink? {
         didSet {
@@ -20,6 +22,14 @@ class DrinkCell: UITableViewCell {
             self.drinkTypeLabel.text = drink?.content
             self.drinkPriceLabel.text = "$\(drink?.price ?? 0)"
             self.accessoryType = drink!.tasted ? .checkmark : .none
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!)
+                DispatchQueue.main.async {
+                    self.drinkImageView.image = UIImage(data: drinkImageData as! Data)
+                    self.drinkImageView.layer.cornerRadius = self.drinkImageView.frame.width / 2
+                }
+            }
         }
     }
     

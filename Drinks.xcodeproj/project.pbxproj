@@ -19,6 +19,7 @@
 		B668B39124A9974D00A97968 /* DrinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B39024A9974D00A97968 /* DrinksTests.swift */; };
 		B668B39C24A9974D00A97968 /* DrinksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B39B24A9974D00A97968 /* DrinksUITests.swift */; };
 		B668B3AA24A9A41E00A97968 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B3A924A9A41E00A97968 /* DrinkCell.swift */; };
+		B6DAC7F824BA990E008AAA86 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC7F724BA990E008AAA86 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B668B39B24A9974D00A97968 /* DrinksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksUITests.swift; sourceTree = "<group>"; };
 		B668B39D24A9974D00A97968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B668B3A924A9A41E00A97968 /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
+		B6DAC7F724BA990E008AAA86 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		B6523A5A24B1055800E9ABC6 /* Controller */ = {
+		B6523A5A24B1055800E9ABC6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B668B37A24A9974C00A97968 /* DrinkListViewController.swift */,
+				B6DAC7F724BA990E008AAA86 /* DetailViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B668B36A24A9974C00A97968 = {
@@ -134,7 +137,7 @@
 			children = (
 				B668B37624A9974C00A97968 /* AppDelegate.swift */,
 				B668B37824A9974C00A97968 /* SceneDelegate.swift */,
-				B6523A5A24B1055800E9ABC6 /* Controller */,
+				B6523A5A24B1055800E9ABC6 /* Controllers */,
 				B6523A5924B1053800E9ABC6 /* Data */,
 				B6523A5824B1052C00E9ABC6 /* Views */,
 				B668B37C24A9974C00A97968 /* Main.storyboard */,
@@ -302,6 +305,7 @@
 				B6523A5724B102F500E9ABC6 /* DrinkService.swift in Sources */,
 				B6523A5524B0FBAB00E9ABC6 /* Drink.swift in Sources */,
 				B668B37924A9974C00A97968 /* SceneDelegate.swift in Sources */,
+				B6DAC7F824BA990E008AAA86 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

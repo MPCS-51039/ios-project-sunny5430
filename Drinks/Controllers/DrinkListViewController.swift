@@ -27,7 +27,17 @@ class DrinkListViewController: UIViewController {
         self.tableView.delegate = self
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destination = segue.destination as? DetailViewController,
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+            let confirmedCell = self.tableView.cellForRow(at: selectedIndexPath) as? DrinkCell
+            else { return }
+        
+        let confirmedDrink = confirmedCell.drink
+        destination.drink = confirmedDrink
+        
+    }
 
 }
 
@@ -52,15 +62,15 @@ extension DrinkListViewController: UITableViewDataSource {
 
 extension DrinkListViewController: UITableViewDelegate {
     //MARK:Delegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if
-            let cell = self.tableView.cellForRow(at: indexPath) as? DrinkCell,
-            let confirmedDrink = cell.drink
-        {
-            confirmedDrink.tasted = true
-            cell.accessoryType = confirmedDrink.tasted ? .checkmark : .none
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if
+//            let cell = self.tableView.cellForRow(at: indexPath) as? DrinkCell,
+//            let confirmedDrink = cell.drink
+//        {
+//            confirmedDrink.tasted = true
+//            cell.accessoryType = confirmedDrink.tasted ? .checkmark : .none
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         

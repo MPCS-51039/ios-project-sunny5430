@@ -8,19 +8,25 @@
 
 import Foundation
 
-class Drink {
+class Drink: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "Drink(name \(self.name), content: \(self.content), price: \(self.price))"
+    }
+    
     var name: String
     var content: String
     var calories: Int
     var price: Float
+    var imageUrl: String
+    
     var tasted: Bool = false
     var isFavorite:Bool = false
     
-    init(name: String, content: String, cal calories: Int, price: Float) {
+    init(name: String, content: String, cal calories: Int, price: Float, imageUrl: String) {
         self.name = name
         self.content = content
         self.calories = calories
         self.price = price
-        
+        self.imageUrl = imageUrl
     }
 }
