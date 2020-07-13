@@ -10,12 +10,27 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var drinkNameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    
+    
+    
     var drink: Drink!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.drinkNameLabel.text = drink.name
+        self.priceLabel.text = "$\(drink.price)"
+        self.contentsLabel.text = drink.content
+        self.caloriesLabel.text = "\(drink.calories)"
+//        print(drink)
         
-        print(drink)
+//        DispatchQueue.global(qos: .userInitiated).async {
+//        let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!)
+//        DispatchQueue.main.async {
+//            self.drinkImageView.image = UIImage(data: drinkImageData as! Data)
 
         // Do any additional setup after loading the view.
     }

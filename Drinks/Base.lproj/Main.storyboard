@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="shW-mx-RDt">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drinkCell" rowHeight="90" id="Phy-K7-vVB" customClass="DrinkCell" customModule="Drinks" customModuleProvider="target">
@@ -48,7 +48,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBn-bm-KTf" userLabel="drinkType">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBn-bm-KTf" userLabel="drinkType">
                                                             <rect key="frame" x="0.0" y="59" width="56.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,14 +101,149 @@
                     <view key="view" contentMode="scaleToFill" id="RCP-fD-D14">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwd-cP-kRr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="vTf-7s-uXX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="624.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pearlMilkTea" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-2g-bfd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LWw-2g-bfd" secondAttribute="height" multiplier="1:1" id="xMn-lu-Axh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygc-GV-X2f" userLabel="drinkNameLabel">
+                                                <rect key="frame" x="151.5" y="428" width="111" height="54"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                                </variation>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-8p-ojX">
+                                                <rect key="frame" x="130" y="496" width="154.5" height="33.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3Y-1U-VYs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvV-KH-cKf" userLabel="priceLabel">
+                                                        <rect key="frame" x="90" y="0.0" width="64.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="rsh-br-T3K">
+                                                <rect key="frame" x="104.5" y="543.5" width="205.5" height="33.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2P-bd-mPl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOZ-qJ-A7w" userLabel="contentsLabel">
+                                                        <rect key="frame" x="141" y="0.0" width="64.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="bX5-nX-Gse">
+                                                <rect key="frame" x="110.5" y="591" width="193" height="33.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIx-D3-SYz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-c5-K65" userLabel="caloriesLabel">
+                                                        <rect key="frame" x="128.5" y="0.0" width="64.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vTf-7s-uXX" firstAttribute="leading" secondItem="00b-Ge-VCA" secondAttribute="leading" id="EHJ-8X-phj"/>
+                                    <constraint firstItem="vTf-7s-uXX" firstAttribute="width" secondItem="IkB-kB-ohW" secondAttribute="width" id="HdT-UK-gNV"/>
+                                    <constraint firstItem="vTf-7s-uXX" firstAttribute="trailing" secondItem="00b-Ge-VCA" secondAttribute="trailing" id="Ywo-B0-AHY"/>
+                                    <constraint firstItem="vTf-7s-uXX" firstAttribute="bottom" secondItem="00b-Ge-VCA" secondAttribute="bottom" id="qvL-Sv-45T"/>
+                                    <constraint firstItem="vTf-7s-uXX" firstAttribute="top" secondItem="00b-Ge-VCA" secondAttribute="top" id="xwh-uI-ERs"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="00b-Ge-VCA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="IkB-kB-ohW"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pwd-cP-kRr" firstAttribute="trailing" secondItem="RCP-fD-D14" secondAttribute="trailing" id="1t1-Bj-c8x"/>
+                            <constraint firstItem="LWw-2g-bfd" firstAttribute="width" secondItem="RCP-fD-D14" secondAttribute="width" id="7GQ-9K-0Ok"/>
+                            <constraint firstItem="LWw-2g-bfd" firstAttribute="height" secondItem="RCP-fD-D14" secondAttribute="height" multiplier="0.89" id="BaT-sz-c7o"/>
+                            <constraint firstItem="pwd-cP-kRr" firstAttribute="leading" secondItem="RCP-fD-D14" secondAttribute="leading" id="VLt-6e-z2V"/>
+                            <constraint firstItem="pwd-cP-kRr" firstAttribute="top" secondItem="RCP-fD-D14" secondAttribute="top" id="cSa-NK-1w0"/>
+                            <constraint firstItem="pwd-cP-kRr" firstAttribute="bottom" secondItem="RCP-fD-D14" secondAttribute="bottom" id="lQA-So-LAK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="svW-8M-Fno"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7GQ-9K-0Ok"/>
+                                <exclude reference="BaT-sz-c7o"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="BaT-sz-c7o"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="7GQ-9K-0Ok"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="dSC-dc-esR"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dSC-dc-esR"/>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="hpz-c5-K65" id="kfW-gO-VTY"/>
+                        <outlet property="contentsLabel" destination="QOZ-qJ-A7w" id="1Z0-FR-ehg"/>
+                        <outlet property="drinkNameLabel" destination="Ygc-GV-X2f" id="gzF-46-O9p"/>
+                        <outlet property="priceLabel" destination="DvV-KH-cKf" id="u7H-s5-Z3i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERT-29-me7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786" y="122"/>
+            <point key="canvasLocation" x="1785.5072463768117" y="121.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G5z-50-J5t">
@@ -136,5 +271,6 @@
     </scenes>
     <resources>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="124"/>
+        <image name="pearlMilkTea" width="180" height="180"/>
     </resources>
 </document>
