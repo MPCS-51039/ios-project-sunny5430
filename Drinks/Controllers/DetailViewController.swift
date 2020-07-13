@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     
+    @IBOutlet weak var drinkImageView: UIImageView!
     
     
     var drink: Drink!
@@ -27,11 +28,12 @@ class DetailViewController: UIViewController {
         self.caloriesLabel.text = "\(drink.calories)"
 //        print(drink)
         
-//        DispatchQueue.global(qos: .userInitiated).async {
-//        let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!)
-//        DispatchQueue.main.async {
-//            self.drinkImageView.image = UIImage(data: drinkImageData as! Data)
-
+        DispatchQueue.global(qos: .userInitiated).async {
+        let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!)
+        DispatchQueue.main.async {
+            self.drinkImageView.image = UIImage(data: drinkImageData! as Data)
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
