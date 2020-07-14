@@ -21,7 +21,14 @@ class DrinkListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.drinkService = DrinkService() // __Service: get data from somewhere else
-        self.drinks = self.drinkService.getDrinks()
+//        self.drinks = self.drinkService.getDrinks()
+        self.drinkService.getDrinks(completion: {drinks, error in
+            guard let drinks = drinks, error == nil else {
+                return
+            }
+            self.drinks = drinks
+            self.tableView.reloadData()
+        })
         
         self.tableView.dataSource = self
         self.tableView.delegate = self

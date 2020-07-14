@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Drink: CustomDebugStringConvertible {
+class Drink: CustomDebugStringConvertible, Codable {
     var debugDescription: String {
         return "Drink(name \(self.name), content: \(self.content), price: \(self.price))"
     }
@@ -22,6 +22,10 @@ class Drink: CustomDebugStringConvertible {
     var tasted: Bool = false
     var isFavorite:Bool = false
     
+    private enum CodingKeys: String, CodingKey {
+        case name, content, calories, price, imageUrl
+    }
+    
     init(name: String, content: String, cal calories: Int, price: Float, imageUrl: String) {
         self.name = name
         self.content = content
@@ -29,4 +33,8 @@ class Drink: CustomDebugStringConvertible {
         self.price = price
         self.imageUrl = imageUrl
     }
+}
+
+struct DrinkResult: Codable {
+    let drinks: [Drink]
 }
