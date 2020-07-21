@@ -10,7 +10,7 @@ import Foundation
 
 class Drink: CustomDebugStringConvertible, Codable {
     var debugDescription: String {
-        return "Drink(name \(self.name), content: \(self.content), price: \(self.price))"
+        return "Drink(name: \(self.name), content: \(self.content), price: \(self.price))"
     }
     
     var name: String

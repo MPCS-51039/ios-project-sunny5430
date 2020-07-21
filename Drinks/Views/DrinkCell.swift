@@ -24,7 +24,7 @@ class DrinkCell: UITableViewCell {
             self.accessoryType = drink!.tasted ? .checkmark : .none
             
             DispatchQueue.global(qos: .userInitiated).async {
-                let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!)
+                guard let drinkImageData = NSData(contentsOf: URL(string: self.drink!.imageUrl)!) else { return }
                 DispatchQueue.main.async {
                     self.drinkImageView.image = UIImage(data: drinkImageData as! Data)
                     self.drinkImageView.layer.cornerRadius = self.drinkImageView.frame.width / 2

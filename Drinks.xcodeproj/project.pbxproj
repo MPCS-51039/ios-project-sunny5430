@@ -20,6 +20,9 @@
 		B668B39C24A9974D00A97968 /* DrinksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B39B24A9974D00A97968 /* DrinksUITests.swift */; };
 		B668B3AA24A9A41E00A97968 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B3A924A9A41E00A97968 /* DrinkCell.swift */; };
 		B6DAC7F824BA990E008AAA86 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC7F724BA990E008AAA86 /* DetailViewController.swift */; };
+		B6DAC7FA24C0BEF8008AAA86 /* DrinkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC7F924C0BEF8008AAA86 /* DrinkTest.swift */; };
+		B6DAC7FC24C0EFEA008AAA86 /* DrinkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC7FB24C0EFEA008AAA86 /* DrinkServiceTests.swift */; };
+		B6DAC80224C11187008AAA86 /* DrinkListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC80124C11187008AAA86 /* DrinkListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		B668B39D24A9974D00A97968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B668B3A924A9A41E00A97968 /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		B6DAC7F724BA990E008AAA86 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B6DAC7F924C0BEF8008AAA86 /* DrinkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTest.swift; sourceTree = "<group>"; };
+		B6DAC7FB24C0EFEA008AAA86 /* DrinkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkServiceTests.swift; sourceTree = "<group>"; };
+		B6DAC80124C11187008AAA86 /* DrinkListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,9 @@
 			children = (
 				B668B39024A9974D00A97968 /* DrinksTests.swift */,
 				B668B39224A9974D00A97968 /* Info.plist */,
+				B6DAC7F924C0BEF8008AAA86 /* DrinkTest.swift */,
+				B6DAC7FB24C0EFEA008AAA86 /* DrinkServiceTests.swift */,
+				B6DAC80124C11187008AAA86 /* DrinkListViewControllerTests.swift */,
 			);
 			path = DrinksTests;
 			sourceTree = "<group>";
@@ -313,7 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DAC7FC24C0EFEA008AAA86 /* DrinkServiceTests.swift in Sources */,
+				B6DAC7FA24C0BEF8008AAA86 /* DrinkTest.swift in Sources */,
 				B668B39124A9974D00A97968 /* DrinksTests.swift in Sources */,
+				B6DAC80224C11187008AAA86 /* DrinkListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
