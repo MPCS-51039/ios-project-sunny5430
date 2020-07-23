@@ -23,10 +23,18 @@ class DrinkListViewController: UIViewController {
 //        print("refreshed")
     }
     
+    override func loadView() {
+        super.loadView()
+        showSpinner(onView: self.view)
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+//        showSpinner(onView: self.view)
         
         self.drinkService = DrinkService() // __Service: get data from somewhere else
         
@@ -57,6 +65,8 @@ class DrinkListViewController: UIViewController {
             self.drinks = drinks
             self.tableView.reloadData()
         })
+        
+        removeSpinner()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -171,3 +181,27 @@ extension UITableView {
     }
 }
 
+var vSpinner: UIView?
+
+extension DrinkListViewController {
+    func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        let ai = UIActivityIndicatorView.init(style: .large)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        vSpinner = spinnerView
+    }
+
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            vSpinner?.removeFromSuperview()
+            vSpinner = nil
+        }
+    }
+}
